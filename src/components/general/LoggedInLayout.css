@@ -1,0 +1,22 @@
+.tab-container {
+  display: grid;
+  grid-gap: 10px;
+      grid-template-columns: 200px 800px 400px;
+      background-color: #fff;
+      color: #444;
+  }
+
+  .favourites-bar {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+
+  .companies-tab {
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+
+  .portfolio-tab {
+    grid-column-start: 3;
+    grid-column-end: 3;
+  }

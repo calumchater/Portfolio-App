@@ -1,0 +1,9 @@
+.list1{
+    list-style: none;
+}
+
+.company-table{
+
+    border: 2px solid grey;
+    border-radius: 5px;
+}
