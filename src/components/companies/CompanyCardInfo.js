@@ -3,7 +3,7 @@ import CompanyStockTable from './CompanyStockTable';
 import CompanyChart from './CompanyChart';
 import Helpers from '../../utilities/helper-functions';
 
-import {DATA_URL} from './constants';
+import {DATA_URL} from '../../constants';
 
 import './CompanyCardInfo.css';
 

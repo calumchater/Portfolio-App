@@ -3,7 +3,7 @@ import CompaniesTab from '../companies/CompaniesTab';
 import PortfolioTab from '../portfolio/PortfolioTab';
 import FavouritesBar from '../favourites/FavouritesBar';
 
-import {DATA_URL} from './constants';
+import {DATA_URL} from '../../constants';
 
 import './LoggedInLayout.css';
 
