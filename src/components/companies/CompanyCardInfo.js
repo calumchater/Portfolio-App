@@ -3,6 +3,8 @@ import CompanyStockTable from './CompanyStockTable';
 import CompanyChart from './CompanyChart';
 import Helpers from '../../utilities/helper-functions';
 
+import {DATA_URL} from './constants';
+
 import './CompanyCardInfo.css';
 
 class CompanyCard extends Component {
@@ -18,7 +20,7 @@ class CompanyCard extends Component {
 
   componentDidMount(){
     var date = '2017-12-30';
-    fetch('http://localhost:3001/stocks/'+ date +'/companies/' + this.props.name)
+    fetch(DATA_URL + '/stocks/'+ date +'/companies/' + this.props.name)
     .then(response=> response.json())
     .then(stocks => {this.setState({ stockInfo: stocks, stocksLoaded: true})});
   }

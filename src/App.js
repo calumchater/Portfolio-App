@@ -6,6 +6,8 @@ import CreateAccountLayout from './components/CreateAccount/CreateAccountLayout'
 import CompaniesTab from './components/companies/CompaniesTab';
 import companiesApi from './services/api/companiesApi';
 
+import {DATA_URL} from './constants';
+
 class App extends Component {
 
   constructor(){
@@ -21,7 +23,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/companies')
+    fetch(DATA_URL + '/companies')
       .then(response=> response.json())
       .then(companies => {this.setState({ companies: companies})});
 }

@@ -1,2 +1,2 @@
-export const DATA_URL='http://localhost:3001'
+export const DATA_URL='https://portfolio-api-calumchater.herokuapp.com'
 
