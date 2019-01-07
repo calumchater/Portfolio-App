@@ -49,7 +49,7 @@ class CreateAccountLayout extends Component {
       return company.company_name.toLowerCase().includes(searchfield.toLowerCase());
     })
     if(this.state.enterApplication){
-      return(<LoggedInLayout companies={this.props.companies} username={this.state.username}></LoggedInLayout>)
+      return(<LoggedInLayout companies={this.props.companies} username={this.props.username}></LoggedInLayout>)
     } else {
       return(
         !this.props.companies.length ?
