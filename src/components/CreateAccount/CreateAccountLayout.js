@@ -3,6 +3,7 @@ import SearchBox from './SearchBox';
 import Scroll from './Scroll';
 import CompaniesFiltered from './CompaniesFiltered';
 import LoggedInLayout from '../general/LoggedInLayout';
+import { DATA_URL } from '../../constants';
 
 class CreateAccountLayout extends Component {
   constructor(props) {
@@ -15,6 +16,19 @@ class CreateAccountLayout extends Component {
     }
   }
 
+  componentDidMount(){
+    fetch(DATA_URL + '/users', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/text',
+        'Content-Type': 'application/text',
+      },
+      body: ({
+        username: this.props.username
+      })
+    });
+  }
+
   handleUsernameChange = (e) => {
     this.setState({username: e.target.value, usernameEntered: true})
     if(e.target.value === ''){this.setState({usernameEntered: false})}
@@ -25,7 +39,7 @@ class CreateAccountLayout extends Component {
   }
 
   enterApplication = () => {
-    this.setState({enterApplication: true})
+    this.setState({enterApplication: true});
   }
 
     render(){
@@ -42,8 +56,7 @@ class CreateAccountLayout extends Component {
         <h1>Loading</h1> :
         (
         <div className='tc'>
-          <p> Please Enter your username: </p> <input type="text" name="username" onChange={this.handleUsernameChange}></input>
-          { this.state.usernameEntered ? (
+          <h2> Welcome to the App {this.props.username}. Here you can pick your favourites</h2>
             <div>
               <button onClick={this.enterApplication}> Confirm and Enter</button>
               <p> Search for Companies you might be interested in </p>
@@ -52,10 +65,9 @@ class CreateAccountLayout extends Component {
                 <CompaniesFiltered companies={filteredCompanies} />
               </Scroll>
             </div>
-          ) : null}
           </div>
+          )
         ) 
-      )
     }
   }
 }

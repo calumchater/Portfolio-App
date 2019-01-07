@@ -15,6 +15,8 @@ class App extends Component {
     super()
     this.state = {
       username: '',
+      new_username:'',
+      newUsernameEntered:false,
       choice: '',
       usernameEntered: false,
       choiceMade: false,
@@ -28,9 +30,14 @@ class App extends Component {
       .then(companies => {this.setState({ companies: companies})});
 }
 
-  handleChange = (e) => {
+  handleUsernameChange = (e) => {
     this.setState({username: e.target.value, usernameEntered: true})
     if(e.target.value === ''){this.setState({usernameEntered: false})}
+  }
+
+  handleNewUsernameChange = (e) => {
+    this.setState({new_username: e.target.value, newUsernameEntered: true})
+    if(e.target.value === ''){this.setState({newUsernameEntered: false})}
   }
 
   handleClick = (e) => {
@@ -39,9 +46,7 @@ class App extends Component {
       choice: value,
       choiceMade:true
     });
-    
   }
-
 
   renderSwitch(param) {
     switch(this.state.choice){
@@ -51,7 +56,7 @@ class App extends Component {
           );
       case 'create-account':
           return(
-            <CreateAccountLayout companies={this.state.companies}></CreateAccountLayout>
+            <CreateAccountLayout companies={this.state.companies} username={this.state.new_username}></CreateAccountLayout>
           );
       case 'login-account':
           return(
@@ -63,13 +68,6 @@ class App extends Component {
   }
 }
 
-  loadCompanies (){
-    companiesApi.getAllCompanies()
-    .then(response=> {
-      return (response.data.json())
-    })
-  }
-
   render() {
 
           return(
@@ -79,10 +77,11 @@ class App extends Component {
               <button value="without-account" onClick={this.handleClick} > Enter without account</button>
             </div>
             <div className="want-account">
-              <button value="create-account" onClick={this.handleClick}> Create Account </button>
+              <input type="text" placeholder="Enter new username" onChange={this.handleNewUsernameChange}></input>
+              {this.state.newUsernameEntered ? <button value="create-account"  onClick={this.handleClick}> Create </button> : null}
             </div>
             <div className="has-account">
-              <input type="text" placeholder="Enter username before clicking Login" onChange={this.handleChange}></input>
+              <input type="text" placeholder="Enter your username" onChange={this.handleUsernameChange}></input>
               {this.state.usernameEntered ? <button value="login-account"  onClick={this.handleClick}> Login </button> : null}
           </div>
           </div>
