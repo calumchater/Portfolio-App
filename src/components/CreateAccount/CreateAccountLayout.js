@@ -20,8 +20,8 @@ class CreateAccountLayout extends Component {
     fetch(DATA_URL + '/users', {
       method: 'POST',
       headers: {
-        'Accept': 'application/text',
-        'Content-Type': 'application/text',
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: ({
         username: this.props.username

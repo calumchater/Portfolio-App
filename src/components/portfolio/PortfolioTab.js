@@ -24,7 +24,8 @@ class PortfolioTab extends Component {
 
     render() {
       return (
-        <p> yo here you'll see some nice ass charts</p>
+        
+        
       );
     }
 
