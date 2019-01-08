@@ -15,6 +15,14 @@ class CompaniesFiltered extends Component {
     if(this.state.addedCompanies.includes(event.target.name)){
       alert('Already in favourites');
     } else {
+      fetch(DATA_URL + '/favourites', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({"company_id": event.target.name,"username": this.props.username})
+      });
       alert('Added!');
       let addedCompanyNew = this.state.addedCompanies;
       addedCompanyNew.push(event.target.name);
