@@ -24,7 +24,7 @@ class CompaniesFiltered extends Component {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({"company_id": event.target.name,"username": this.props.username})
+        body: JSON.stringify({"company_id": event.target.id,"username": this.props.username})
       });
       alert('Added!');
       let addedCompanyNew = this.state.addedCompanies;

@@ -21,7 +21,7 @@ class CompanyCard extends Component {
         <div>
           <h2>{this.props.company_name}</h2>
           <p>{this.props.info}</p>
-          <button name={this.props.company_name} onClick={this.props.informParent}> Add to favourites </button>
+          <button id={this.props.company_id} name={this.props.company_name} onClick={this.props.informParent}> Add to favourites </button>
         </div>
       </div>
     );
