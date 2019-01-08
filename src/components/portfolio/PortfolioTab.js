@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 
-import {calculateVariation} from '../../utilities/helper-functions';
+import {Chart} from 'react-chartjs-2';
 
 class PortfolioTab extends Component {
 
   constructor (props) {
     super(props);
     this.state = {
-    
+      data:[]
     };
 
+  }
+
+  handleChange = (e) => {
+    this.setState({data: e.target.value, usernameEntered: true})
   }
 
 
@@ -22,12 +26,20 @@ class PortfolioTab extends Component {
     });
   }
 
+
+
     render() {
+        var myDoughnutChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: data,
+          options: options
+      });
       return (
         <div>
+          {myDoughnutChart}
           {this.props.favourites.map((favItem, index) => (
             <div>
-              <p>{favItem.company_name}</p><input type="text" key={favItem.company_name}/>
+              <p>{favItem.company_name}</p><input type="text" onChange={this.handleChange} key={favItem.company_name}/>
             </div>
             ))}
         </div>
