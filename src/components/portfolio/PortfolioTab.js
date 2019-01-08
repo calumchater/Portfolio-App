@@ -26,13 +26,13 @@ class PortfolioTab extends Component {
     });
   }
 
-
+  changeData = () =>
+    
 
     render() {
-        var myDoughnutChart = new Chart(ctx, {
+      var myDoughnutChart = new Chart(ctx, {
           type: 'doughnut',
           data: this.state.data,
-          options: options
       });
       return (
         <div>
