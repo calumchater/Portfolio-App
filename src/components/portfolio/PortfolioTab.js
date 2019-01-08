@@ -27,7 +27,7 @@ class PortfolioTab extends Component {
   }
 
   changeData = () => {
-
+    
   }
 
 
@@ -35,10 +35,11 @@ class PortfolioTab extends Component {
       /*var myDoughnutChart = new Chart(ctx, {
           type: 'doughnut',
           data: this.state.data,
+          {myDoughnutChart}
       });*/
       return (
         <div>
-          {myDoughnutChart}
+          
           <p>Shares Input</p>
           {this.props.favourites.map((favItem, index) => (
             <div>
