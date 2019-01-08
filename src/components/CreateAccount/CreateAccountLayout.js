@@ -17,14 +17,15 @@ class CreateAccountLayout extends Component {
   }
 
   componentDidMount(){
-    var username = this.state.username;
     fetch(DATA_URL + '/users', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: username,
+      body: ({
+        "username": this.props.username
+      })
     });
   }
 
