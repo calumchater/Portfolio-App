@@ -40,11 +40,7 @@ class CompanyStockTable extends Component {
         <li><b>Date: {this.props.date}</b></li>
         <li>Latest:{this.state.latest}</li>
         <li>Previous: {this.state.previous}</li>
-        <li className={!this.state.variation>0 ? 'text-success' : 'text-danger'}> Variation
-          {
-            !this.state.variation>0 ? (String.fromCharCode(9650)+ this.state.variation + '%' ) : (String.fromCharCode(9660) + this.state.variation + '%')
-          }
-        </li>
+        <li> Variation: {this.state.variation}% </li>
       </ul>
     ) : (null)
     )

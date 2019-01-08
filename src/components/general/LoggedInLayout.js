@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import CompaniesTab from '../companies/CompaniesTab';
-import PortfolioTab from '../portfolio/PortfolioTab';
 import FavouritesBar from '../favourites/FavouritesBar';
 
 import {DATA_URL} from '../../constants';
@@ -29,13 +28,12 @@ class LoggedInLayout extends Component {
     render(){
         return(
             this.state.favsLoaded ? (
-            <div>
+            <div><div className="top-layout">
                 <h2>Stock Market and Portfolio App</h2>
-                <h3>Welcome back {this.props.username} </h3>
+                <h3>Welcome back {this.props.username} </h3></div>
                 <div className="tab-container">
                     <div className="favourites-bar"><FavouritesBar favourites={this.state.favourites} ></FavouritesBar> </div>
                     <div className="companies-tab"><CompaniesTab companies={this.props.companies} ></CompaniesTab></div>
-                    <div className="portfolio-tab"><PortfolioTab favourites={this.state.favourites}></PortfolioTab></div>
                 </div>
             </div>
             ) : null
@@ -44,3 +42,5 @@ class LoggedInLayout extends Component {
 }
 
 export default LoggedInLayout;
+
+// <div className="portfolio-tab"><PortfolioTab favourites={this.state.favourites}></PortfolioTab></div>

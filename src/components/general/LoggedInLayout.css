@@ -1,7 +1,7 @@
 .tab-container {
   display: grid;
   grid-gap: 10px;
-      grid-template-columns: 200px 800px 400px;
+      grid-template-columns: 15% 85%;
       background-color: #fff;
       color: #444;
   }
@@ -9,6 +9,7 @@
   .favourites-bar {
     grid-column-start: 1;
     grid-column-end: 1;
+    background-color: lightgoldenrodyellow;
   }
 
   .companies-tab {
@@ -16,7 +17,10 @@
     grid-column-end: 2;
   }
 
-  .portfolio-tab {
-    grid-column-start: 3;
-    grid-column-end: 3;
+  .top-layout {
+    background-color: lightcyan;
+    padding-top: 40px;
+    padding-right: 25px;
+    padding-bottom: 40px;
+    padding-left: 25px;
   }

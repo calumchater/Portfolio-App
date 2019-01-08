@@ -17,11 +17,11 @@ class CompanyCard extends Component {
 
   render(){
     return (
-      <div className='tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5'>
+      <div className="companycard">
         <div>
           <h2>{this.props.company_name}</h2>
           <p>{this.props.info}</p>
-          <button id={this.props.company_id} name={this.props.company_name} onClick={this.props.informParent}> Add to favourites </button>
+          <button id={this.props.company_id} name={this.props.company_id} onClick={this.props.informParent}> Add to favourites </button>
         </div>
       </div>
     );

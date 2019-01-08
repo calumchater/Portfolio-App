@@ -72,24 +72,30 @@ class App extends Component {
 
           return(
           !this.state.choiceMade ? (
-          <div className="choice-container">
-            <div className="no-account">
-              <button value="without-account" onClick={this.handleClick} > Enter without account</button>
+          <div className="container">
+            <h2> Welcome to the Stock Market App. Please select an option </h2>
+            <div className="choice-container">
+              <div className="no-account">
+                <button value="without-account" onClick={this.handleClick} > Enter without account</button>
+              </div>
+              <div className="want-account">
+                <p> Create an Account</p>
+                <input type="text" placeholder="Enter new username" onChange={this.handleNewUsernameChange}></input>
+                {this.state.newUsernameEntered ? <button value="create-account"  onClick={this.handleClick}> Create </button> : null}
+              </div>
+              <div className="has-account">
+                <p> Login with existing account </p>
+                <input type="text" placeholder="Enter your username" onChange={this.handleUsernameChange}></input>
+                {this.state.usernameEntered ? <button value="login-account"  onClick={this.handleClick}> Login </button> : null}
+              </div>
             </div>
-            <div className="want-account">
-              <input type="text" placeholder="Enter new username" onChange={this.handleNewUsernameChange}></input>
-              {this.state.newUsernameEntered ? <button value="create-account"  onClick={this.handleClick}> Create </button> : null}
-            </div>
-            <div className="has-account">
-              <input type="text" placeholder="Enter your username" onChange={this.handleUsernameChange}></input>
-              {this.state.usernameEntered ? <button value="login-account"  onClick={this.handleClick}> Login </button> : null}
-          </div>
           </div>
         ) : (
         <div>
           {this.renderSwitch(this.state.choice)}
         </div>)
         )
+      
   }
 }
 

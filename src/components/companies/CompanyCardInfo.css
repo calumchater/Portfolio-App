@@ -2,8 +2,6 @@
     list-style: none;
 }
 
-.company-table{
-
-    border: 2px solid grey;
-    border-radius: 5px;
+.company-list-element{
+    padding-top: 15px;
 }

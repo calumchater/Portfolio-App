@@ -54,7 +54,8 @@ class CreateAccountLayout extends Component {
         <h1>Loading</h1> :
         (
         <div className='tc'>
-          <h2> Welcome to the App {this.props.username}. Here you can pick your favourites</h2>
+          <h2> Welcome to the App {this.props.username}</h2>
+           <h4>Here you can pick your favourites <br/></h4>
             <div>
               <button onClick={this.enterApplication}> Confirm and Enter</button>
               <p> Search for Companies you might be interested in </p>

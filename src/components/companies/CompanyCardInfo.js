@@ -29,17 +29,17 @@ class CompanyCard extends Component {
   render(){
     return (
       this.state.stocksLoaded ? (
-      <li>
+      <li className="company-list-element">
         <table className="company-table">
-          <tr width={800} layout="fixed">
+          <tr layout="fixed">
             <td width={200}>
               <ul className="list1">
                 <li><h3>{this.props.name}</h3></li>
                 <li>{this.props.info}</li>
               </ul>
             </td>
-            <td margin-left={20} width={150}><CompanyStockTable stocks={this.state.stockInfo} date={this.state.date}></CompanyStockTable></td>
-            <td width={500} margin-left={20}>
+            <td margin-left={20} width={50}><CompanyStockTable stocks={this.state.stockInfo} date={this.state.date}></CompanyStockTable></td>
+            <td width={700} margin-left={20}>
                 <h5>{this.props.name}, last week values</h5> 
                 <CompanyChart name={this.props.name} stocks={this.state.stockInfo} date={this.state.date}></CompanyChart>
             </td>
