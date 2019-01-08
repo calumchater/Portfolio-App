@@ -35,7 +35,7 @@ class LoggedInLayout extends Component {
                 <div className="tab-container">
                     <div className="favourites-bar"><FavouritesBar favourites={this.state.favourites} ></FavouritesBar> </div>
                     <div className="companies-tab"><CompaniesTab companies={this.props.companies} ></CompaniesTab></div>
-                    <div className="portfolio-tab"><PortfolioTab ></PortfolioTab></div>
+                    <div className="portfolio-tab"><PortfolioTab favourties={this.state.favourites}></PortfolioTab></div>
                 </div>
             </div>
             ) : null

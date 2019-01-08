@@ -25,8 +25,15 @@ class PortfolioTab extends Component {
     render() {
       return (
         <p></p>
+        
       );
     }
 
   }
   export default PortfolioTab;
+
+  /*{this.props.favourites.map((favItem, index) => (
+          <FavouritesItem key={'favItem' + index} latest_stock_value={favItem.stock_value} company_name={favItem.company_name} company_initials={favItem.company_initials}  />
+          ))}
+
+        }}*/
