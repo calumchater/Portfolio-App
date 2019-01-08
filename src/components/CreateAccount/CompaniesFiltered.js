@@ -2,6 +2,9 @@
 import React,{Component} from 'react';
 import CompanyCard from './CompanyCard';
 
+import {DATA_URL} from '../../constants'; 
+
+
 class CompaniesFiltered extends Component {
   
   constructor(props){
