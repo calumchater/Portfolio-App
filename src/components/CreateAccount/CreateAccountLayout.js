@@ -23,9 +23,7 @@ class CreateAccountLayout extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: {
-        "username": this.props.username
-      }
+      body: JSON.stringify({"username": this.props.username})
     });
   }
 
