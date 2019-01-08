@@ -30,7 +30,8 @@ class CompaniesFiltered extends Component {
             return (
               <CompanyCard
                 key={i}
-                name={item.company_name}
+                company_id={item.company_id}
+                company_name={item.company_name}
                 info={item.company_info}
                 informParent={this.checkAndPost}
                 />

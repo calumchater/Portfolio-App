@@ -10,6 +10,14 @@ class CompanyCard extends Component {
   }
 
   informParent = (event) => {
+    fetch(DATA_URL + '/favourites', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({"company_id": this.props.company_id,"username": this.props.username})
+    });
     this.props.checkAndPost(event);
   }
 
