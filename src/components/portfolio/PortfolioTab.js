@@ -24,8 +24,7 @@ class PortfolioTab extends Component {
 
     render() {
       return (
-        <p> lol </p>
-        
+        <p></p>
       );
     }
 
