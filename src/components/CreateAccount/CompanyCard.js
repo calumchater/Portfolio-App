@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 
+import {DATA_URL} from '../../constants'; 
+
 class CompanyCard extends Component {
   
   constructor(props){
