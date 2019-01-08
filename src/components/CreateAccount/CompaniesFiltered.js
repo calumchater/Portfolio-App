@@ -30,6 +30,7 @@ class CompaniesFiltered extends Component {
             return (
               <CompanyCard
                 key={i}
+                username={this.props.username}
                 company_id={item.company_id}
                 company_name={item.company_name}
                 info={item.company_info}

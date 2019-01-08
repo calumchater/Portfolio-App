@@ -60,7 +60,7 @@ class CreateAccountLayout extends Component {
               <p> Search for Companies you might be interested in </p>
               <SearchBox searchChange={this.onSearchChange}/>
               <Scroll>
-                <CompaniesFiltered companies={filteredCompanies} />
+                <CompaniesFiltered companies={filteredCompanies} username={this.props.username} />
               </Scroll>
             </div>
           </div>
