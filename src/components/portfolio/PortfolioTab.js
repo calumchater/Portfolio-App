@@ -31,15 +31,16 @@ class PortfolioTab extends Component {
     render() {
         var myDoughnutChart = new Chart(ctx, {
           type: 'doughnut',
-          data: data,
+          data: this.state.data,
           options: options
       });
       return (
         <div>
           {myDoughnutChart}
+          <p>Shares Input</p>
           {this.props.favourites.map((favItem, index) => (
             <div>
-              <p>{favItem.company_name}</p><input type="text" onChange={this.handleChange} key={favItem.company_name}/>
+              <p>{favItem.company_name }</p><input type="text" onChange={this.handleChange} key={favItem.company_name}/>
             </div>
             ))}
         </div>
